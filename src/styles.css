@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
 }
@@ -32,6 +36,60 @@ body {
 .subtitle {
   color: #4b5563;
   margin-top: -0.4rem;
+}
+
+.hero-content {
+  width: 100%;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+  transition: background 150ms ease;
+}
+
+.hero-button:hover {
+  background: #dbeafe;
+  text-decoration: none;
+}
+
+.icon-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+}
+
+.icon-links svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
 }
 
 .grid {
@@ -81,6 +139,10 @@ a:hover {
     grid-template-columns: 1fr;
     text-align: center;
     justify-items: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
   }
 }
 
