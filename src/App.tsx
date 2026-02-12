@@ -104,14 +104,27 @@ export default function App() {
       </header>
 
       <main className="grid">
-        <section className="card">
+        <section className="card about">
           <h2>About Me</h2>
           <p>
             Hi, I’m Natasha. I’m a CS student at UC Berkeley and I like building things that actually work and feel good to use. Most of my background is in Python and C++, and recently I’ve been working on networking stuff, and also on Pintos, a simple instructional operating system framework for the x86 instruction set architecture. I’m learning React + TypeScript now so I can ship cleaner front ends and deploy projects end-to-end. A lot of my motivation for learning software engineering comes from games. I’m especially into roguelikes, and one long-term goal of mine is to build one, as I love replayability, and the idea of iterating until it’s fun.
           </p>
         </section>
 
-        <section className="card" id="projects">
+        <section className="card education">
+          <h2>Education & Relevant Coursework</h2>
+          <p>
+            <strong>University of California, Berkeley</strong> — Bachelor of
+            Arts in Computer Science
+          </p>
+          <ul>
+            {coursework.map((course) => (
+              <li key={course}>{course}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="card projects">
           <h2>My Projects</h2>
           <ul className="project-list">
             {projects.map((project) => (
@@ -131,20 +144,7 @@ export default function App() {
           </ul>
         </section>
 
-        <section className="card">
-          <h2>Education & Relevant Coursework</h2>
-          <p>
-            <strong>University of California, Berkeley</strong> — Bachelor of
-            Arts in Computer Science
-          </p>
-          <ul>
-            {coursework.map((course) => (
-              <li key={course}>{course}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="card">
+        <section className="card contact">
           <h2>Contact Me</h2>
           <ul className="contact-list">
             <li>
@@ -167,6 +167,11 @@ export default function App() {
               </a>
             </li>
           </ul>
+        </section>
+
+        <section className="card now">
+          <h2>Now</h2>
+          <p>Working on this site! :)</p>
         </section>
       </main>
     </div>
