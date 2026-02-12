@@ -20,10 +20,11 @@ const projects: Project[] = [
 ];
 
 const coursework = [
-  'Data Structures and Algorithms',
-  'Web Development',
-  'Database Systems',
-  'Software Engineering',
+  'CS 61B: Data Structures and Algorithms',
+  'CS 61C: Machine Structures',
+  'CS 168: Internet Architecture',
+  'CS 162: Operating Systems and System Programming',
+  'Data 100: Principles and Techniques of Data Science',
 ];
 
 export default function App() {
@@ -36,7 +37,7 @@ export default function App() {
           className="profile-image"
         />
         <div>
-          <h1>Natasha J</h1>
+          <h1>Natasha Wu</h1>
           <p className="subtitle">Aspiring Software Engineer</p>
           <p>
             Welcome to my portfolio! This site highlights my background,
@@ -92,21 +93,21 @@ export default function App() {
           <ul className="contact-list">
             <li>
               <strong>Email:</strong>{' '}
-              <a href="mailto:youremail@example.com">youremail@example.com</a>
+              <a href="mailto:natasha_wu@berkeley.edu">natasha_wu@berkeley.edu</a>
             </li>
             <li>
-              <strong>Phone:</strong> +1 (555) 123-4567
+              <strong>Phone:</strong> +1 (510) 277-7196
             </li>
             <li>
               <strong>LinkedIn:</strong>{' '}
-              <a href="https://www.linkedin.com/in/your-profile/" target="_blank" rel="noreferrer">
-                linkedin.com/in/your-profile
+              <a href="https://www.linkedin.com/in/natasha-wu-461691257/" target="_blank" rel="noreferrer">
+                https://www.linkedin.com/in/natasha-wu-461691257/
               </a>
             </li>
             <li>
               <strong>GitHub:</strong>{' '}
-              <a href="https://github.com/your-username" target="_blank" rel="noreferrer">
-                github.com/your-username
+              <a href="https://github.com/natashajyw" target="_blank" rel="noreferrer">
+                https://github.com/natashajyw
               </a>
             </li>
             <li>
