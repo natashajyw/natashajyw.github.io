@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 type Project = {
   title: string;
   summary: string;
@@ -50,6 +52,20 @@ const coursework = [
 ];
 
 export default function App() {
+  const email = 'natasha_wu@berkeley.edu';
+  const [copyLabel, setCopyLabel] = useState('Copy');
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopyLabel('Copied!');
+      window.setTimeout(() => setCopyLabel('Copy'), 1500);
+    } catch {
+      setCopyLabel('Unable to copy');
+      window.setTimeout(() => setCopyLabel('Copy'), 1500);
+    }
+  };
+
   return (
     <div className="page">
       <header className="hero card">
@@ -66,7 +82,7 @@ export default function App() {
             projects, and contact information.
           </p>
           <div className="hero-actions" aria-label="Quick links">
-            <a className="hero-button" href="#projects">
+            <a className="hero-button" href="#my-projects">
               View Projects
             </a>
             <a
@@ -124,7 +140,7 @@ export default function App() {
           </ul>
         </section>
 
-        <section className="card projects">
+        <section className="card projects" id="my-projects">
           <h2>My Projects</h2>
           <ul className="project-list">
             {projects.map((project) => (
@@ -149,10 +165,10 @@ export default function App() {
           <ul className="contact-list">
             <li>
               <strong>Email:</strong>{' '}
-              <a href="mailto:natasha_wu@berkeley.edu">natasha_wu@berkeley.edu</a>
-            </li>
-            <li>
-              <strong>Phone:</strong> +1 (510) 277-7196
+              <a href="mailto:natasha_wu@berkeley.edu">{email}</a>{' '}
+              <button type="button" className="copy-button" onClick={handleCopyEmail}>
+                {copyLabel}
+              </button>
             </li>
             <li>
               <strong>LinkedIn:</strong>{' '}
