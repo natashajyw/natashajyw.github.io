@@ -131,9 +131,6 @@ export default function App() {
                 https://github.com/natashajyw
               </a>
             </li>
-            <li>
-              <strong>Discord:</strong> yourname#1234
-            </li>
           </ul>
         </section>
       </main>
