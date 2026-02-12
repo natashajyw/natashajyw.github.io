@@ -54,8 +54,8 @@ export default function App() {
     <div className="page">
       <header className="hero card">
         <img
-          src="/profile-placeholder.svg"
-          alt="Profile placeholder"
+          src="/profile.jpg"
+          alt="Natasha Wu profile photo"
           className="profile-image"
         />
         <div>
@@ -72,8 +72,7 @@ export default function App() {
         <section className="card">
           <h2>About Me</h2>
           <p>
-            I am a motivated developer passionate about building user-friendly
-            software and learning modern web technologies.
+            Hi, I’m Natasha. I’m a CS student at UC Berkeley and I like building things that actually work and feel good to use. Most of my background is in Python and C++, and recently I’ve been working on networking stuff, and also on Pintos, a simple instructional operating system framework for the x86 instruction set architecture. I’m learning React + TypeScript now so I can ship cleaner front ends and deploy projects end-to-end. A lot of my motivation for learning software engineering comes from games. I’m especially into roguelikes, and one long-term goal of mine is to build one, as I love replayability, and the idea of iterating until it’s fun.
           </p>
         </section>
 
