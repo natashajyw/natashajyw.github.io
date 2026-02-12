@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Natasha J Portfolio</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" data-presets="typescript,react">
+      type Project = {
+        title: string;
+        description: string;
+        stack: string[];
+        link?: string;
+      };
+
+      const projects: Project[] = [
+        {
+          title: 'Portfolio Website',
+          description: 'A responsive portfolio built with React and TypeScript.',
+          stack: ['React', 'TypeScript', 'CSS'],
+        },
+        {
+          title: 'Project Placeholder',
+          description: 'Add details about another project here.',
+          stack: ['Your Tech Stack'],
+          link: '#',
+        },
+      ];
+
+      const coursework = [
+        'Data Structures and Algorithms',
+        'Web Development',
+        'Database Systems',
+        'Software Engineering',
+      ];
+
+      function App() {
+        return (
+          <div className="page">
+            <header className="hero card">
+              <img
+                src="./public/profile-placeholder.svg"
+                alt="Profile placeholder"
+                className="profile-image"
+              />
+              <div>
+                <h1>Natasha J</h1>
+                <p className="subtitle">Aspiring Software Engineer</p>
+                <p>
+                  Welcome to my portfolio! This site highlights my background,
+                  projects, and contact information.
+                </p>
+              </div>
+            </header>
+
+            <main className="grid">
+              <section className="card">
+                <h2>About Me</h2>
+                <p>
+                  I am a motivated developer passionate about building
+                  user-friendly software and learning modern web technologies.
+                </p>
+              </section>
+
+              <section className="card">
+                <h2>My Projects</h2>
+                <ul className="project-list">
+                  {projects.map((project) => (
+                    <li key={project.title}>
+                      <h3>{project.title}</h3>
+                      <p>{project.description}</p>
+                      <p>
+                        <strong>Stack:</strong> {project.stack.join(', ')}
+                      </p>
+                      {project.link ? (
+                        <a href={project.link} target="_blank" rel="noreferrer">
+                          View project
+                        </a>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              <section className="card">
+                <h2>Education & Relevant Coursework</h2>
+                <p>
+                  <strong>University Name</strong> — Bachelor of Science in
+                  Computer Science
+                </p>
+                <ul>
+                  {coursework.map((course) => (
+                    <li key={course}>{course}</li>
+                  ))}
+                </ul>
+              </section>
+
+              <section className="card">
+                <h2>Contact Me</h2>
+                <ul className="contact-list">
+                  <li>
+                    <strong>Email:</strong>{' '}
+                    <a href="mailto:youremail@example.com">youremail@example.com</a>
+                  </li>
+                  <li>
+                    <strong>Phone:</strong> +1 (555) 123-4567
+                  </li>
+                  <li>
+                    <strong>LinkedIn:</strong>{' '}
+                    <a href="https://www.linkedin.com/in/your-profile/">
+                      linkedin.com/in/your-profile
+                    </a>
+                  </li>
+                  <li>
+                    <strong>GitHub:</strong>{' '}
+                    <a href="https://github.com/your-username">
+                      github.com/your-username
+                    </a>
+                  </li>
+                  <li>
+                    <strong>Discord:</strong> yourname#1234
+                  </li>
+                </ul>
+              </section>
+            </main>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
