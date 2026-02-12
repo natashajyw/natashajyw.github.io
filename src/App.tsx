@@ -101,7 +101,7 @@ export default function App() {
           <h2>Education & Relevant Coursework</h2>
           <p>
             <strong>University of California, Berkeley</strong> — Bachelor of
-            Science in Computer Science
+            Arts in Computer Science
           </p>
           <ul>
             {coursework.map((course) => (
