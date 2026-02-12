@@ -1,21 +1,43 @@
 type Project = {
   title: string;
-  description: string;
+  summary: string;
+  highlights: string[];
   stack: string[];
-  link?: string;
 };
 
 const projects: Project[] = [
   {
-    title: 'Portfolio Website',
-    description: 'A responsive portfolio built with React and TypeScript.',
-    stack: ['React', 'TypeScript', 'Vite', 'CSS'],
+    title: 'Baseball Stadium Tour Generator',
+    summary:
+      'Built in a Scrum-based team to create a full-stack baseball stadium tour planner (11,000+ lines of code).',
+    highlights: [
+      'Implemented Dijkstra\'s algorithm with recursion to generate best routes case-by-case for fans.',
+      'Developed an intuitive GUI using Qt Creator for an improved user experience.',
+      'Integrated SQLite for efficient backend data storage and retrieval.',
+    ],
+    stack: ['C++', 'Qt Creator', 'SQLite', 'Algorithms'],
   },
   {
-    title: 'Project Placeholder',
-    description: 'Add details about another project here.',
-    stack: ['Your Tech Stack'],
-    link: '#',
+    title: 'Linked List Implementation in ARM64 Assembly',
+    summary:
+      'Co-developed a robust linked list system in ARM64 assembly (6,000+ lines of code).',
+    highlights: [
+      'Built functions to read, store, and manage strings from text files in linked-list nodes.',
+      'Supported manual insertion, deletion, search, and print operations on nodes.',
+      'Added memory allocation tracking and file rewrite support for persistent storage.',
+    ],
+    stack: ['ARM64 Assembly', 'Data Structures', 'Memory Management', 'File I/O'],
+  },
+  {
+    title: 'Discord Bot',
+    summary:
+      'Designed and implemented a Python Discord bot to support interactive and administrative server features.',
+    highlights: [
+      'Implemented user commands with text responses and image attachments to boost engagement.',
+      'Added moderation capabilities including kick, mute, and ban tools for admins.',
+      'Configured welcome and departure announcements to improve server community experience.',
+    ],
+    stack: ['Python', 'discord.py'],
   },
 ];
 
@@ -61,15 +83,15 @@ export default function App() {
             {projects.map((project) => (
               <li key={project.title}>
                 <h3>{project.title}</h3>
-                <p>{project.description}</p>
+                <p>{project.summary}</p>
+                <ul>
+                  {project.highlights.map((highlight) => (
+                    <li key={highlight}>{highlight}</li>
+                  ))}
+                </ul>
                 <p>
                   <strong>Stack:</strong> {project.stack.join(', ')}
                 </p>
-                {project.link ? (
-                  <a href={project.link} target="_blank" rel="noreferrer">
-                    View project
-                  </a>
-                ) : null}
               </li>
             ))}
           </ul>
@@ -78,8 +100,8 @@ export default function App() {
         <section className="card">
           <h2>Education & Relevant Coursework</h2>
           <p>
-            <strong>University Name</strong> — Bachelor of Science in Computer
-            Science
+            <strong>University of California, Berkeley</strong> — Bachelor of
+            Science in Computer Science
           </p>
           <ul>
             {coursework.map((course) => (
