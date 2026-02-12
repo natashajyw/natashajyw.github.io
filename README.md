@@ -16,15 +16,14 @@ npm run build
 npm run preview
 ```
 
-## Deploy with `gh-pages`
+## Deploy with GitHub Actions (auto-deploy on push)
 
-```bash
-npm run deploy
-```
+This project now uses a GitHub Actions workflow at `.github/workflows/deploy.yml`.
 
-This runs `predeploy` (`npm run build`) and publishes the `dist/` folder to the `gh-pages` branch.
+- Every push to `main` automatically builds and deploys to GitHub Pages.
+- You can also run the deployment manually from the Actions tab (`workflow_dispatch`).
 
-> If this repository is configured as a **user site** (`natashajyw.github.io`), ensure GitHub Pages is set to deploy from the `gh-pages` branch in repo settings when using this script.
+> In repository settings, set **Pages** to **Build and deployment → Source: GitHub Actions**.
 
 ## Included sections
 
