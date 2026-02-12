@@ -1,4 +1,4 @@
-# natashajyw.github.io
+# [natashajyw.github.io](https://natashajyw.github.io)
 
 A React + TypeScript portfolio built with Vite.
 
