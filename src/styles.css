@@ -149,6 +149,22 @@ body {
   margin-bottom: 0.75rem;
 }
 
+.copy-button {
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.copy-button:hover {
+  background: #dbeafe;
+}
+
 a {
   color: #1d4ed8;
   text-decoration: none;
