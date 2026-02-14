@@ -57,15 +57,15 @@ body {
   justify-content: center;
   padding: 0.5rem 0.9rem;
   border-radius: 999px;
-  border: 1px solid #2563eb;
-  background: #eff6ff;
-  color: #1d4ed8;
+  border: 1px solid #7eb8da;
+  background: #c8e0f0;
+  color: #4a90b5;
   font-weight: 600;
   transition: background 150ms ease;
 }
 
 .hero-button:hover {
-  background: #dbeafe;
+  background: #b8d9ed;
   text-decoration: none;
 }
 
@@ -82,8 +82,8 @@ body {
   width: 2rem;
   height: 2rem;
   border-radius: 999px;
-  border: 1px solid #d1d5db;
-  color: #1f2937;
+  border: 1px solid #7eb8da;
+  color: #4a90b5;
 }
 
 .icon-links svg {
@@ -153,16 +153,16 @@ body {
   margin-left: 0.5rem;
   padding: 0.2rem 0.55rem;
   border-radius: 999px;
-  border: 1px solid #bfdbfe;
-  background: #eff6ff;
-  color: #1d4ed8;
+  border: 1px solid #7eb8da;
+  background: #c8e0f0;
+  color: #4a90b5;
   font-size: 0.8rem;
   font-weight: 600;
   cursor: pointer;
 }
 
 .copy-button:hover {
-  background: #dbeafe;
+  background: #b8d9ed;
 }
 
 a {
