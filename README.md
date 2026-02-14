@@ -1,4 +1,4 @@
-# natashajyw.github.io
+# [natashajyw.github.io](https://natashajyw.github.io)
 
 A React + TypeScript portfolio built with Vite.
 
@@ -28,7 +28,6 @@ This project now uses a GitHub Actions workflow at `.github/workflows/deploy.yml
 ## Included sections
 
 - About Me
-- Contact Me (email, phone, LinkedIn, GitHub, Discord)
+- Contact Me (email, phone, LinkedIn, GitHub)
 - My Projects
 - Education and Relevant Coursework
-- Profile image placeholder

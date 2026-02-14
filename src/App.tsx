@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 type Project = {
   title: string;
   summary: string;
@@ -50,6 +52,20 @@ const coursework = [
 ];
 
 export default function App() {
+  const email = 'natasha_wu@berkeley.edu';
+  const [copyLabel, setCopyLabel] = useState('Copy');
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopyLabel('Copied!');
+      window.setTimeout(() => setCopyLabel('Copy'), 1500);
+    } catch {
+      setCopyLabel('Unable to copy');
+      window.setTimeout(() => setCopyLabel('Copy'), 1500);
+    }
+  };
+
   return (
     <div className="page">
       <header className="hero card">
@@ -58,25 +74,73 @@ export default function App() {
           alt="Natasha Wu profile photo"
           className="profile-image"
         />
-        <div>
+        <div className="hero-content">
           <h1>Natasha Wu</h1>
           <p className="subtitle">Aspiring Software Engineer</p>
           <p>
             Welcome to my portfolio! This site highlights my background,
             projects, and contact information.
           </p>
+          <div className="hero-actions" aria-label="Quick links">
+            <a className="hero-button" href="#my-projects">
+              View Projects
+            </a>
+            <a
+              className="hero-button"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Resume (PDF)
+            </a>
+            <div className="icon-links" aria-label="Social links">
+              <a
+                href="https://github.com/natashajyw"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="GitHub"
+              >
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                  <path d="M12 1.5a10.5 10.5 0 0 0-3.32 20.46c.53.1.72-.23.72-.52v-1.8c-2.95.64-3.57-1.25-3.57-1.25-.48-1.2-1.17-1.53-1.17-1.53-.95-.65.08-.64.08-.64 1.06.07 1.62 1.08 1.62 1.08.93 1.58 2.45 1.13 3.05.86.09-.68.36-1.13.66-1.39-2.36-.27-4.84-1.17-4.84-5.2 0-1.15.42-2.1 1.08-2.84-.11-.27-.47-1.38.11-2.87 0 0 .89-.28 2.9 1.08a9.97 9.97 0 0 1 5.28 0c2.01-1.36 2.9-1.08 2.9-1.08.58 1.49.22 2.6.11 2.87.67.74 1.08 1.69 1.08 2.84 0 4.04-2.48 4.92-4.85 5.19.37.32.71.95.71 1.92v2.84c0 .29.19.62.73.52A10.5 10.5 0 0 0 12 1.5Z" />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/natasha-wu-461691257/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
+                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+                  <path d="M6.5 8.25A1.75 1.75 0 1 1 6.5 4.75a1.75 1.75 0 0 1 0 3.5ZM4.9 9.75h3.2V19h-3.2V9.75ZM10 9.75h3.06v1.26h.04c.43-.8 1.48-1.64 3.05-1.64 3.26 0 3.85 2.15 3.85 4.95V19h-3.2v-4.11c0-.98-.02-2.24-1.37-2.24-1.37 0-1.58 1.07-1.58 2.17V19H10V9.75Z" />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
       </header>
 
       <main className="grid">
-        <section className="card">
+        <section className="card about">
           <h2>About Me</h2>
           <p>
             Hi, I’m Natasha. I’m a CS student at UC Berkeley and I like building things that actually work and feel good to use. Most of my background is in Python and C++, and recently I’ve been working on networking stuff, and also on Pintos, a simple instructional operating system framework for the x86 instruction set architecture. I’m learning React + TypeScript now so I can ship cleaner front ends and deploy projects end-to-end. A lot of my motivation for learning software engineering comes from games. I’m especially into roguelikes, and one long-term goal of mine is to build one, as I love replayability, and the idea of iterating until it’s fun.
           </p>
         </section>
 
-        <section className="card">
+        <section className="card education">
+          <h2>Education & Relevant Coursework</h2>
+          <p>
+            <strong>University of California, Berkeley</strong> — Bachelor of
+            Arts in Computer Science
+          </p>
+          <ul>
+            {coursework.map((course) => (
+              <li key={course}>{course}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="card projects" id="my-projects">
           <h2>My Projects</h2>
           <ul className="project-list">
             {projects.map((project) => (
@@ -96,28 +160,15 @@ export default function App() {
           </ul>
         </section>
 
-        <section className="card">
-          <h2>Education & Relevant Coursework</h2>
-          <p>
-            <strong>University of California, Berkeley</strong> — Bachelor of
-            Arts in Computer Science
-          </p>
-          <ul>
-            {coursework.map((course) => (
-              <li key={course}>{course}</li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="card">
+        <section className="card contact">
           <h2>Contact Me</h2>
           <ul className="contact-list">
             <li>
               <strong>Email:</strong>{' '}
-              <a href="mailto:natasha_wu@berkeley.edu">natasha_wu@berkeley.edu</a>
-            </li>
-            <li>
-              <strong>Phone:</strong> +1 (510) 277-7196
+              <a href="mailto:natasha_wu@berkeley.edu">{email}</a>{' '}
+              <button type="button" className="copy-button" onClick={handleCopyEmail}>
+                {copyLabel}
+              </button>
             </li>
             <li>
               <strong>LinkedIn:</strong>{' '}
@@ -132,6 +183,11 @@ export default function App() {
               </a>
             </li>
           </ul>
+        </section>
+
+        <section className="card now">
+          <h2>Now</h2>
+          <p>Working on this site! :)</p>
         </section>
       </main>
     </div>
